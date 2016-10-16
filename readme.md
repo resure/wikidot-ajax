@@ -1,4 +1,4 @@
-## WikidotAJAX [![Build Status](https://travis-ci.org/resure/wikidot-ajax.svg?branch=master)](https://travis-ci.org/resure/wikidot-kit) [![Dependencies Status](https://david-dm.org/resure/wikidot-kit.svg)](https://david-dm.org/resure/wikidot-ajax)
+## WikidotAJAX [![Build Status](https://travis-ci.org/resure/wikidot-ajax.svg?branch=master)](https://travis-ci.org/resure/wikidot-ajax) [![Dependencies Status](https://david-dm.org/resure/wikidot-ajax.svg)](https://david-dm.org/resure/wikidot-ajax)
 
 Lib for performing requests to Wikidot AJAX connector. Returns instance of [cheerio](https://github.com/cheeriojs/cheerio) which is like jQuery-like object with loaded response body.
 
