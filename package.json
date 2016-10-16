@@ -1,0 +1,33 @@
+{
+  "name": "wikidot-ajax",
+  "version": "0.0.0",
+  "description": "Perform requests to Wikidot AJAX connector",
+  "license": "MIT",
+  "repository": "resure/wikidot-ajax",
+  "author": {
+    "name": "Gadzhi Gadzhiev",
+    "email": "inbox@resure.net",
+    "url": "resure.net"
+  },
+  "engines": {
+    "node": ">=4"
+  },
+  "scripts": {
+    "test": "eslint ."
+  },
+  "files": [
+    "index.js",
+    "cli.js"
+  ],
+  "keywords": [
+    "wikidot"
+  ],
+  "dependencies": {
+    "cheerio": "^0.22.0",
+    "got": "^6.5.0"
+  },
+  "devDependencies": {
+    "eslint": "^2.5.3",
+    "eslint-config-zireael": "^1.0.1"
+  }
+}
