@@ -1,6 +1,6 @@
 {
   "name": "wikidot-ajax",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Perform requests to Wikidot AJAX connector",
   "license": "MIT",
   "repository": "resure/wikidot-ajax",
