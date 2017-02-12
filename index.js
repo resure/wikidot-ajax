@@ -8,16 +8,13 @@ const Bluebird = require('bluebird');
  * This function takes baseURL and returns another function
  * that is ready to make requests to certain Wikidot site.
  *
- * @param {Object} args
- * @param {String} args.baseURL
+ * @param {String} baseURL
  *
  * @returns {Function}
  */
-module.exports = function WikidotAJAX(args) {
-	args = args || {};
-
-	const wikidotToken7 = Math.random().toString(36).substring(7);
-	const connectorURL = `${args.baseURL}/ajax-module-connector.php`;
+module.exports = function WikidotAJAX({baseURL}) {
+    const wikidotToken7 = Math.random().toString(36).substring(7);
+    const connectorURL = `${baseURL}/ajax-module-connector.php`;
 
 	/**
 	 * This function takes params object which is passed to POST request to
@@ -32,13 +29,13 @@ module.exports = function WikidotAJAX(args) {
 	 *
 	 * @returns {Promise}
 	 */
-	return (params) => {
-		return Bluebird.resolve(got(connectorURL, {
-			headers: {Cookie: `wikidot_token7=${wikidotToken7}`},
-			body: Object.assign({}, {wikidot_token7: wikidotToken7, callbackIndex: 1}, params),
-			json: true
-		}).then((response) => {
-			return cheerio.load(response.body.body);
-		}));
-	};
+    return (params) => {
+        return Bluebird.resolve(got(connectorURL, {
+            headers: {Cookie: `wikidot_token7=${wikidotToken7}`},
+            body: Object.assign({}, {wikidot_token7: wikidotToken7, callbackIndex: 1}, params),
+            json: true
+        }).then((response) => {
+            return cheerio.load(response.body.body);
+        }));
+    };
 };
