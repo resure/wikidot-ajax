@@ -2,6 +2,7 @@
 
 const got = require('got');
 const cheerio = require('cheerio');
+const Bluebird = require('bluebird');
 
 /**
  * This function takes baseURL and returns another function
@@ -32,12 +33,12 @@ module.exports = function WikidotAJAX(args) {
 	 * @returns {Promise}
 	 */
 	return (params) => {
-		return got(connectorURL, {
+		return Bluebird.resolve(got(connectorURL, {
 			headers: {Cookie: `wikidot_token7=${wikidotToken7}`},
 			body: Object.assign({}, {wikidot_token7: wikidotToken7, callbackIndex: 1}, params),
 			json: true
 		}).then((response) => {
 			return cheerio.load(response.body.body);
-		});
+		}));
 	};
 };
